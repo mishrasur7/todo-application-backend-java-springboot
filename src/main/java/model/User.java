@@ -60,19 +60,19 @@ public class User {
 		this.password = password;
 	}
 
-	public Timestamp getCreatedTime() {
+	public LocalDate getCreatedTime() {
 		return createdTime;
 	}
 
-	public void setCreatedTime(Timestamp createdTime) {
+	public void setCreatedTime(LocalDate createdTime) {
 		this.createdTime = createdTime;
 	}
 
-	public Timestamp getUpdatedTime() {
+	public LocalDate getUpdatedTime() {
 		return updatedTime;
 	}
 
-	public void setUpdatedTime(Timestamp updatedTime) {
+	public void setUpdatedTime(LocalDate updatedTime) {
 		this.updatedTime = updatedTime;
 	}
 
