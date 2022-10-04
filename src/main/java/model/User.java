@@ -1,6 +1,6 @@
 package model;
 
-import java.security.Timestamp;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,15 +20,15 @@ public class User {
 	private String password;
 
 	@CreationTimestamp
-	private Timestamp createdTime;
+	private LocalDate createdTime;
 
 	@UpdateTimestamp
-	private Timestamp updatedTime;
+	private LocalDate updatedTime;
 
 	public User() {
 	}
 
-	public User(String email, String password, Timestamp createdTime, Timestamp updatedTime) {
+	public User(String email, String password, LocalDate createdTime, LocalDate updatedTime) {
 		super();
 		this.email = email;
 		this.password = password;
