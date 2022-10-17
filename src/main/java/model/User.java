@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -26,6 +27,7 @@ public class User {
 	@UpdateTimestamp
 	private LocalDate updatedTime;
 
+	@OneToMany
 	private List<Todo> todolist;
 
 	public User() {
