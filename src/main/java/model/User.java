@@ -1,6 +1,7 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,15 +26,20 @@ public class User {
 	@UpdateTimestamp
 	private LocalDate updatedTime;
 
+	private List<Todo> todolist;
+
 	public User() {
 	}
 
-	public User(String email, String password, LocalDate createdTime, LocalDate updatedTime) {
+	public User(Long id, String email, String password, LocalDate createdTime, LocalDate updatedTime,
+			List<Todo> todolist) {
 		super();
+		this.id = id;
 		this.email = email;
 		this.password = password;
 		this.createdTime = createdTime;
 		this.updatedTime = updatedTime;
+		this.todolist = todolist;
 	}
 
 	public Long getId() {
@@ -76,10 +82,18 @@ public class User {
 		this.updatedTime = updatedTime;
 	}
 
+	public List<Todo> getTodolist() {
+		return todolist;
+	}
+
+	public void setTodolist(List<Todo> todolist) {
+		this.todolist = todolist;
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", password=" + password + ", createdTime=" + createdTime
-				+ ", updatedTime=" + updatedTime + "]";
+				+ ", updatedTime=" + updatedTime + ", todolist=" + todolist + "]";
 	}
 
 }
