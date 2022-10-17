@@ -9,9 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 @Entity
 public class User {
 	@Id
@@ -20,11 +17,7 @@ public class User {
 
 	private String email;
 	private String password;
-
-	@CreationTimestamp
 	private LocalDate createdTime;
-
-	@UpdateTimestamp
 	private LocalDate updatedTime;
 
 	@OneToMany

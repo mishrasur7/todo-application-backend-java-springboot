@@ -22,7 +22,6 @@ public class Todo {
 
 	private String name;
 	private String description;
-
 	private Long userId;
 	private LocalDate createdTime;
 	private LocalDate updatedTime;
