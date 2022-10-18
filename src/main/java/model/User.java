@@ -1,13 +1,17 @@
 package model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class User {
@@ -20,8 +24,9 @@ public class User {
 	private LocalDate createdTime;
 	private LocalDate updatedTime;
 
-	@OneToMany
-	private List<Todo> todolist;
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "todo")
+	@JsonIgnore
+	private List<Todo> todolist; 
 
 	public User() {
 	}

@@ -10,12 +10,11 @@ import javax.persistence.Id;
 @Entity
 public class Todo {
 
-	//an enum values
+	// an enum values
 	enum Status {
 		NotStarted, Ongoing, NotGoing
 	}
-	
-	//private properties
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -27,7 +26,12 @@ public class Todo {
 	private LocalDate updatedTime;
 	private Status status;
 
-	//constructor
+	// constructor without params
+	public Todo() {
+
+	}
+
+	// constructor with params
 	public Todo(String name, String description, Long userId, LocalDate createdTime, LocalDate updatedTime,
 			Status status) {
 		super();
@@ -39,7 +43,7 @@ public class Todo {
 		this.status = status;
 	}
 
-	//getters and setters
+	// getters and setters
 	public Long getId() {
 		return id;
 	}
@@ -96,7 +100,7 @@ public class Todo {
 		this.status = status;
 	}
 
-	//public toString method  
+	// public toString method  
 	@Override
 	public String toString() {
 		return "Todo [id=" + id + ", name=" + name + ", description=" + description + ", userId=" + userId
